@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 function LoginPage() {
   const {
@@ -13,6 +14,10 @@ function LoginPage() {
   const onSubmit = handleSubmit((data) => {
     signin(data)
   });
+
+  useEffect(() => {
+
+  }, [] )
   return (
     <div className="flex h-[calc(100vh-100px)] items-center justify-center">
       <div className="bg-zinc-800 max-w-md w-full p-10 rounded-md ">

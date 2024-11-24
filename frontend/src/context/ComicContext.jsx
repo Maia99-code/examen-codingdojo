@@ -18,11 +18,16 @@ export const useComics = () => {
 export function  ComicProvider({ children }){
     const [comics, setComics] = useState([])
 
-    const getComics = async() => {
+    const getComics = async () => {
+        try{
         const res = await getComicRequest()
-        console.log(res);
+        setComics(res.data)
+    } catch (error){
+        console.log(error);
         
     }
+        
+    }  
 
     const createComics = async (comic) =>{
         const res = await createComicsRequest(comic)
